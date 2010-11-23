@@ -18,16 +18,17 @@ cTabs comes with a nice default style but you can edit it anyway you would like 
 
 Old *busted* way to install this plugin:
 
-1. Upload folder `ctabs` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload folder `ctabs` to the `/wp-content/plugins/` directory.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Place `[tabgroup][tab title="Tab One"]Content in tab one here.[/tab][tab title="Tab Two"]Content in tab two here.[/tab][/tabgroup]` in your post or page content area.
 1. If desired, click the cTabs option on the admin appearance menu. Change the CSS to whatever you would like.
 
 New *hotness* way to install this plugin:
-1. From your wordpress plugin menu, click 'add new'
-1. Search for 'ctabs'
-1. Click 'Install Now'
-1. After install, click 'Activate'
+
+1. From your wordpress plugin menu, click 'add new'.
+1. Search for 'ctabs'.
+1. Click 'Install Now'.
+1. After install, click 'Activate'.
 1. Place `[tabgroup][tab title="Tab One"]Content in tab one here.[/tab][tab title="Tab Two"]Content in tab two here.[/tab][/tabgroup]` in your post or page content area.
 1. If desired, click the cTabs option on the admin appearance menu. Change the CSS to whatever you would like.
 
@@ -40,7 +41,7 @@ Currently no. I plan to make that option available soon.
 
 = Can I customize the CSS? =
 
-Yes. cTabs is very customizeable direcly from the admin options menu. Modify the CSS however you want. Option to reset to default is available.
+Yes. cTabs is very customizeable directly from the admin options menu. Modify the CSS however you want. Option to reset to default is available.
 
 == Screenshots ==
 
