@@ -2,9 +2,9 @@
 /*
 Plugin Name: cTabs
 Plugin URI: http://ctabs.webtmc.us
-Description: Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Usage instructions are located at <a href="http://ctabs.webtmc.us">our site</a>. For help visit our <a href="http://ctabs.webtmc.us/forum">Support Page</a>.
+Description: Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Usage instructions are located at our site. <a href="themes.php?page=ctabs-page">Options Panel</a> | <a href="http://ctabs.webtmc.us/forum">Support</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UC8RR2L9TUNVU">Donate</a>
 Author: Brad Bodine
-Version: 1.0
+Version: 1.1
 Author URI: http://truemediaconcepts.com
 
     Content Tabs is released under the GNU General Public License (GPL)
@@ -41,7 +41,7 @@ wp_enqueue_style('ctabsReq', $ctabs_plugin_url.'/ctabs.req.css', array(), '1.0',
 				$cCurrent = $first ? "current" : "";
 				$cTabClass = strtr($tab['title'], " ", "_");
 				$tabs[] = ''."\t \t".'<li class="'. $cTabClass .'"><a href="#'.$cTabClass.'" class="' . $cCurrent . '">'.$tab['title'].'</a></li>';
-				$panes[] = ''."\t \t".'<div id="'.$cTabClass.'" class="' . $cHide . '">'."\n".''.$tab['content'].''."\n \t \t".'</div>';
+				$panes[] = ''."\t \t".'<div id="'.$cTabClass.'" class="' . $cHide . '">'."\n".''.do_shortcode($tab['content']).''."\n \t \t".'</div>';
 				$first = false;
 				
 			}
@@ -64,13 +64,13 @@ wp_enqueue_style('ctabsReq', $ctabs_plugin_url.'/ctabs.req.css', array(), '1.0',
 
 
 /* Set default CSS -------------------------------------- */
-$imgLocation = get_bloginfo(wpurl);
+$imgLocation = $ctabs_plugin_url;
 $ctabs_default = '#ctabs { background: #eee; padding: 10px; margin: 14px; -moz-box-shadow: 0 0 5px #666; -webkit-box-shadow: 0 0 5px #666; box-shadow: 0 0 5px #666; border:1px solid #C2C2C2;}
 #ctabs .nav { overflow: hidden; margin: 0 0 10px 0; }
 
 #ctabs .nav li { float: left; margin:10px 5px 0 0;list-style: none !important; }
 
-#ctabs .nav li a { display: block; padding:5px 10px; border:1px solid #ddd;text-align:center;text-decoration:none;font-weight:bold;background:url('.$imgLocation.'/wp-content/plugins/ctabs/images/fbsprite.gif) 0 0 repeat-x;font-family:Arial,Helvetica,sans-serif;font-size:0.825em;color:#000}
+#ctabs .nav li a { display: block; padding:5px 10px; border:1px solid #ddd;text-align:center;text-decoration:none;font-weight:bold;background:url('.$imgLocation.'/images/fbsprite.gif) 0 0 repeat-x;font-family:Arial,Helvetica,sans-serif;font-size:0.825em;color:#000}
 
 
 #ctabs .nav li a.current {border-color:blue; background-position:0 -48px; color:#fff;}
@@ -78,7 +78,7 @@ $ctabs_default = '#ctabs { background: #eee; padding: 10px; margin: 14px; -moz-b
 
 #ctabs ul.nav {border-bottom:1px solid #5872A7; padding-bottom:3px;}
 
-br{float:left;}';
+';
 /* ------------------------------------------------------ */
 
 
@@ -153,9 +153,34 @@ function ctabs_options() {
 	<form method="post" action="<?php echo $_SERVER ['REQUEST_URI']?>">
 	<table class="form-table">
 		<tr valign="top">
-			<th scope="row">Custom CSS</th>
-			<td><textarea style="width:100%" rows="25" name="<?php echo $opt_name?>"><?php echo $css_val?></textarea></td>
+			<th scope="row">Custom CSS<br /><em style="font-size:70%;">edit and save</em></th>
+			<td><textarea style="width:100%" rows="15" name="<?php echo $opt_name?>"><?php echo $css_val?></textarea></td>
 		</tr>
+		<tr valign="top">
+			<th scope="row">Usage Instructions</th>
+			<td><p>cTabs uses shortcodes in the page content editor. Use the format below to create a group of content tabs on your page.</p>
+<textarea style="width:100%" rows="10" name="instructions" readonly="yes" >
+Keep the line above and below each shortcode empty. If you don't it will still work but wordpress may add a lot of space to the top of your tab groups.
+
+[tabgroup]
+
+[tab title="Tab One"]
+
+	This is tab ones content.
+	
+[/tab]
+
+[tab title="This is Tab Two"]
+
+	This is the content in tab two.
+
+[/tab]
+
+[/tabgroup]
+
+Thats it.
+</textarea></td>
+		</tr>		
 	</table>
 
 	<input type="hidden" name="action" value="update" />

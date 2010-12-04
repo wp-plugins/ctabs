@@ -1,12 +1,12 @@
 === Plugin Name ===
 Contributors: bbodine1, snumb130
-Donate link: http://ctabs.webtmc.com/donate
+Donate link: http://ctabs.webtmc.us/donate
 Tags: content, tabs, seperator, jquery tabs, jquery
 Requires at least: 2.6
-Tested up to: 3.0.1
-Stable tag: 1.0
+Tested up to: 3.0.2
+Stable tag: 1.1
 
-Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] .
+Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Now you can use other plugin shortcodes inside the tabs.
 
 == Description ==
 
@@ -35,6 +35,10 @@ New *hotness* way to install this plugin:
 
 == Frequently Asked Questions ==
 
+= Why do I get a huge margin above my tabs? =
+
+Wordpress wants you to place all of your shortcodes on a line by themselves. I try to keep the line above and below my shortcode empty when I use them. If there is content on the line above, below, or beside the [shortcode] it will add a lot of <br>'s to the top of the tabs.
+
 = Can I have multiple tabgroups on one page? =
 
 Currently no. I plan to make that option available soon.
@@ -50,13 +54,21 @@ Yes. cTabs is very customizeable directly from the admin options menu. Modify th
 
 == Changelog ==
 
+= 1.1 =
+* Added ability to use other plugin shortcodes inside a tab.
+* Minor default CSS adjustments to help avoid conflicts.
+* Minor update to options page
+ 
+
 = 1.0 =
 * Initial Release
 
 
 == Upgrade Notice ==
 
-= 1.0 =
-Initial Release
+= 1.1 =
+* Added ability to use other plugin shortcodes inside a tab.
+* Minor default CSS adjustments to help avoid conflicts.
+* Minor update to options page
 
 
