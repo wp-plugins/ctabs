@@ -3,7 +3,7 @@ Contributors: bbodine1, snumb130
 Donate link: http://ctabs.webtmc.us/donate
 Tags: content, tabs, separator, jquery tabs, jquery
 Requires at least: 2.6
-Tested up to: 3.0.2
+Tested up to: 3.0.3
 Stable tag: 1.2
 
 Content Tabs (cTabs) allows you to post content into separate tabs on a page using shortcodes. [shortcodes] . Now you can use other plugin shortcodes inside the tabs.
