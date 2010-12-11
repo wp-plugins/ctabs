@@ -19,6 +19,7 @@ $ctabs_plugin_url = trailingslashit( get_bloginfo('wpurl') ).PLUGINDIR.'/'. dirn
 
 add_filter('the_posts', 'ctabsTestPost');
 function ctabsTestPost($posts){
+global $ctabs_plugin_url;
 	if ( empty($posts) ) return $posts;
 	
 	foreach ( $posts as $post ){
