@@ -4,7 +4,7 @@ Plugin Name: cTabs
 Plugin URI: http://ctabs.webtmc.us
 Description: Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Usage instructions are located at our site. <a href="themes.php?page=ctabs-page">Options Panel</a> | <a href="http://ctabs.webtmc.us/forum">Support</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UC8RR2L9TUNVU">Donate</a>
 Author: Brad Bodine
-Version: 1.1
+Version: 1.2.1
 Author URI: http://truemediaconcepts.com
 
     Content Tabs is released under the GNU General Public License (GPL)
@@ -14,16 +14,30 @@ Author URI: http://truemediaconcepts.com
 $ctabs_plugin_url = trailingslashit( get_bloginfo('wpurl') ).PLUGINDIR.'/'. dirname( plugin_basename(__FILE__) );
 
 /*
-* Add jQuery - and alt js -----------------------------------------------------------
+* Add styles jQuery - and alt js - only if shortcode is being used. Else don't call ----------------------
 */
-wp_enqueue_script("jquery"); 
-wp_enqueue_script('ctabs', $ctabs_plugin_url.'/ctabs.jquery.js', array('jquery'));
-wp_enqueue_script('ctabsInit', $ctabs_plugin_url.'/ctabs.init.js', array('ctabs'));
 
-/*
-* Add styles
-*/
-wp_enqueue_style('ctabsReq', $ctabs_plugin_url.'/ctabs.req.css', array(), '1.0', 'screen');
+add_filter('the_posts', 'ctabsTestPost');
+function ctabsTestPost($posts){
+	if ( empty($posts) ) return $posts;
+	
+	foreach ( $posts as $post ){
+		if (is_int( stripos($post->post_content, '[tabgroup]') )){
+			$ctabs_found = true;
+			break;
+		}
+	}
+
+	if (isset ($ctabs_found)) {
+		wp_enqueue_script("jquery"); 
+		wp_enqueue_script('ctabs', $ctabs_plugin_url.'/ctabs.jquery.js', array('jquery'));
+		wp_enqueue_script('ctabsInit', $ctabs_plugin_url.'/ctabs.init.js', array('ctabs'));
+		wp_enqueue_style('ctabsReq', $ctabs_plugin_url.'/ctabs.req.css', array(), '1.0', 'screen');
+		add_action ( 'wp_head', 'ctabs_addcss' );
+	}
+	return $posts;
+}
+/* ------------------------------------------------------ */
 
 /*
 * Add Shortcodes ---------------------------------------------------------------------
@@ -211,7 +225,7 @@ function ctabs_addcss() {
 	echo ctabs_css_filter ( $ctabs_css ) . "\n";
 	echo '</style>' . "\n";
 }
-add_action ( 'wp_head', 'ctabs_addcss' );
+//add_action ( 'wp_head', 'ctabs_addcss' );
 /* ------------------------------------------------------ */
 
 

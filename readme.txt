@@ -1,12 +1,12 @@
 === Plugin Name ===
 Contributors: bbodine1, snumb130
 Donate link: http://ctabs.webtmc.us/donate
-Tags: content, tabs, seperator, jquery tabs, jquery
+Tags: content, tabs, separator, jquery tabs, jquery
 Requires at least: 2.6
-Tested up to: 3.0.2
-Stable tag: 1.1
+Tested up to: 3.0.3
+Stable tag: 1.2.1
 
-Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Now you can use other plugin shortcodes inside the tabs.
+Content Tabs (cTabs) allows you to post content into separate tabs on a page using shortcodes. [shortcodes] . Now you can use other plugin shortcodes inside the tabs.
 
 == Description ==
 
@@ -45,7 +45,7 @@ Currently no. I plan to make that option available soon.
 
 = Can I customize the CSS? =
 
-Yes. cTabs is very customizeable directly from the admin options menu. Modify the CSS however you want. Option to reset to default is available.
+Yes. cTabs is very customizable directly from the admin options menu. Modify the CSS however you want. Option to reset to default is available.
 
 == Screenshots ==
 
@@ -53,6 +53,12 @@ Yes. cTabs is very customizeable directly from the admin options menu. Modify th
 2. cTabs option page.
 
 == Changelog ==
+
+= 1.2.1 =
+* Fixed - Issue that broke tabs. 
+
+= 1.2 =
+* Added - Don't show nasty head css when not using the tabs.
 
 = 1.1 =
 * Added ability to use other plugin shortcodes inside a tab.
@@ -66,9 +72,5 @@ Yes. cTabs is very customizeable directly from the admin options menu. Modify th
 
 == Upgrade Notice ==
 
-= 1.1 =
-* Added ability to use other plugin shortcodes inside a tab.
-* Minor default CSS adjustments to help avoid conflicts.
-* Minor update to options page
-
-
+= 1.2.1 =
+* Fixed - Issue that broke tabs. 
