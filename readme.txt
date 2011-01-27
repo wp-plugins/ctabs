@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: bbodine1, snumb130
 Donate link: http://ctabs.webtmc.us/donate
-Tags: content, tabs, separator, jquery tabs, jquery
+Tags: content, tabs, separator, jquery tabs, jquery  
 Requires at least: 2.6
 Tested up to: 3.0.4
 Stable tag: 1.2.2
