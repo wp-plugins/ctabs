@@ -1,5 +1,5 @@
-var $j = jQuery.noConflict();
+var $jctbs = jQuery.noConflict();
 
-$j(function() {
-	$j("#ctabs").cTabs();
+$jctbs(function() {
+	$jctbs("#ctabs").cTabs();
 });
