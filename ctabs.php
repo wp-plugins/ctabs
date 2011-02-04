@@ -4,7 +4,7 @@ Plugin Name: cTabs
 Plugin URI: http://ctabs.webtmc.us
 Description: Content Tabs (cTabs) allows you to post content into seperate tabs on a page using shortcodes. [shortcodes] . Usage instructions are located at our site. <a href="themes.php?page=ctabs-page">Options Panel</a> | <a href="http://ctabs.webtmc.us/forum">Support</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UC8RR2L9TUNVU">Donate</a>
 Author: Brad Bodine
-Version: 1.2.2
+Version: 1.3
 Author URI: http://truemediaconcepts.com  
 
     Content Tabs is released under the GNU General Public License (GPL)

@@ -4,7 +4,7 @@ Donate link: http://ctabs.webtmc.us/donate
 Tags: content, tabs, separator, jquery tabs, jquery  
 Requires at least: 2.6
 Tested up to: 3.0.4
-Stable tag: 1.2.2
+Stable tag: 1.3
 
 Content Tabs (cTabs) allows you to post content into separate tabs on a page using shortcodes. [shortcodes] 
 
@@ -54,6 +54,9 @@ Yes. cTabs is very customizable directly from the admin options menu. Modify the
 
 == Changelog ==
 
+= 1.3 =
+* Added - No Cache for issues with ie8 switching between tabs. 
+
 = 1.2.2 =
 * Fixed - Issue causing jQuery conflict and tabs to show but not switch. 
 
@@ -75,5 +78,5 @@ Yes. cTabs is very customizable directly from the admin options menu. Modify the
 
 == Upgrade Notice ==
 
-= 1.2.2 =
-* Fixed - Issue causing jQuery conflict and tabs to show but not switch. 
+= 1.3 =
+* Added - No Cache for issues with ie8 switching between tabs. 
